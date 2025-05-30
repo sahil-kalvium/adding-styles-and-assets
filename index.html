@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@700&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <!-- Particles container for visual effects -->
+    <div id="particles" class="particles"></div>
+    <main class="game-container">
+        <h1 class="game-title">Rock Paper Scissors</h1>
+        
+        <!-- Sound control button -->
+        <button id="sound-toggle" class="sound-toggle" aria-label="Toggle Sound">
+            <span id="sound-icon">🔊</span>
+        </button>
+        
+        <section class="score-board">
+            <div class="score player-score-card">
+                <h2>You</h2>
+                <span id="player-score" class="score-number">0</span>
+            </div>
+            <div class="vs-badge">VS</div>
+            <div class="score computer-score-card">
+                <h2>Computer</h2>
+                <span id="computer-score" class="score-number">0</span>
+            </div>
+        </section>
+
+        <!-- Add this after the score-board section and before game-area section -->
+<div class="rounds-info">
+    <h3>Round <span id="current-round">1</span>/5</h3>
+</div>
+
+        <section class="game-area">
+            <div class="choices">
+                <button class="choice-btn" data-choice="rock" aria-label="Choose Rock">
+                    <div class="choice-icon">🪨</div>
+                    <span class="choice-text">Rock</span>
+                </button>
+                <button class="choice-btn" data-choice="paper" aria-label="Choose Paper">
+                    <div class="choice-icon">📄</div>
+                    <span class="choice-text">Paper</span>
+                </button>
+                <button class="choice-btn" data-choice="scissors" aria-label="Choose Scissors">
+                    <div class="choice-icon">✂️</div>
+                    <span class="choice-text">Scissors</span>
+                </button>
+            </div>
+
+            <div class="result-area">
+                <div class="battle-area">
+                    <div class="choice-display player-choice">
+                        <span class="choice-label">Your choice</span>
+                        <div id="player-choice" class="choice-symbol">?</div>
+                    </div>
+                    <div class="choice-display computer-choice">
+                        <span class="choice-label">Computer's choice</span>
+                        <div id="computer-choice" class="choice-symbol">?</div>
+                    </div>
+                </div>
+                <p class="result" id="result-text">Make your choice!</p>
+            </div>
+        </section>
+
+        <button id="reset-btn" class="reset-btn" aria-label="Reset Game">
+            <span class="reset-icon">🔄</span> Reset Game
+        </button>
+    </main>
+    <!-- Audio elements for sound effects -->
+    <audio id="click-sound" src="assets/click.mp3" preload="auto"></audio>
+    <audio id="win-sound" src="assets/win.mp3" preload="auto"></audio>
+    <audio id="lose-sound" src="assets/lose.mp3" preload="auto"></audio>
+    <audio id="tie-sound" src="assets/tie.mp3" preload="auto"></audio>
+    <audio id="game-win-sound" src="assets/game_win.mp3" preload="auto"></audio>
+    <audio id="game-lose-sound" src="assets/game_lose.mp3" preload="auto"></audio>
+    <audio id="reset-sound" src="assets/reset.mp3" preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
